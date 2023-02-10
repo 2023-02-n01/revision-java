@@ -37,4 +37,13 @@ public class Personnage {
     public void setScore(int score) {
         this.score = score;
     }
+
+    @Override
+    public String toString() {
+        return "Personnage{" +
+                "force=" + force +
+                ", pointsVie=" + pointsVie +
+                ", score=" + score +
+                '}';
+    }
 }
