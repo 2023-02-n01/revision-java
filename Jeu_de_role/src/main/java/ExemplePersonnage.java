@@ -3,10 +3,13 @@ public class ExemplePersonnage {
     public static void main(String[] args) {
 
         Personnage personnage = new Personnage();
+        new SaisieUtilisateur();
 
-        personnage.setForce(12);
-        personnage.setScore(18);
-        personnage.setPointsDV(21);
+        personnage.getNom(SaisieUtilisateur.main());
+        personnage.getForce();
+        personnage.getScore();
+        personnage.getPointsDV();
+
 
         System.out.println(personnage);
     }

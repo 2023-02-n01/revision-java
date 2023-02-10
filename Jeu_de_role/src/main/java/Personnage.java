@@ -1,6 +1,6 @@
 public class Personnage{
 
-
+   public String nom;
    private Integer force;
    private Integer pointsDV;
    private Integer score;
@@ -32,10 +32,19 @@ public class Personnage{
     @Override
     public String toString() {
         return "Personnage{" +
+                "nom=" + nom +
                 "force=" + force +
                 ", pointsDV=" + pointsDV +
                 ", score=" + score +
                 '}';
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
 
