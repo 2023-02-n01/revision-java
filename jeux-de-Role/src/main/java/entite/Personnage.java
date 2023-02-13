@@ -1,6 +1,15 @@
 package entite;
 
 public class Personnage {
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    private String nom;
     private int force;
     private int pointsVie;
     private int score = 0;
@@ -9,6 +18,7 @@ public class Personnage {
     }
 
     public Personnage(int force, int pointsVie, int score) {
+        this.nom = nom;
         this.force = force;
         this.pointsVie = pointsVie;
         this.score = score;
@@ -41,7 +51,8 @@ public class Personnage {
     @Override
     public String toString() {
         return "Personnage{" +
-                "force=" + force +
+                "nom='" + nom + '\'' +
+                ", force=" + force +
                 ", pointsVie=" + pointsVie +
                 ", score=" + score +
                 '}';

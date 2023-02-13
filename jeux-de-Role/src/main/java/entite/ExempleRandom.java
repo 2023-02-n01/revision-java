@@ -17,9 +17,10 @@ public class ExempleRandom {
         System.out.println(pointsVie);
 
     }
-    public static int randomizer(int max, int min){
+    public static int randomizer(int min, int max){
         Random random = new Random();
         int nbAleatoire = random.nextInt(max - min + 1) + min;
         return nbAleatoire;
     }
+
 }
