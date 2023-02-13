@@ -1,3 +1,5 @@
+package entites;
+
 public class Personnage{
 
    public String nom;
@@ -31,7 +33,7 @@ public class Personnage{
 
     @Override
     public String toString() {
-        return "Personnage{" +
+        return "entites.Personnage{" +
                 "nom=" + nom +
                 "force=" + force +
                 ", pointsDV=" + pointsDV +

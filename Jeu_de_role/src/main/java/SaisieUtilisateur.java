@@ -1,14 +1,14 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class SaisieUtilisateur {
 
-    public static void main(String[] args) {
+    public static String main() {
 
         String nom = scanNom();
 
 
         System.out.println("Nom du joueur : " + nom);
+        return nom;
     }
 
 
