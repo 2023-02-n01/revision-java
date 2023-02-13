@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class ExempleRandom {
 
+
     public static void main(String[] args) {
         // génération d'un nombre entre 12 et 18
         Random random = new Random();
@@ -15,5 +16,10 @@ public class ExempleRandom {
         int pointsVie = random.nextInt(20,50);
         System.out.println(pointsVie);
 
+    }
+    public static int randomizer(int max, int min){
+        Random random = new Random();
+        int nbAleatoire = random.nextInt(max - min + 1) + min;
+        return nbAleatoire;
     }
 }
