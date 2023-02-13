@@ -1,4 +1,4 @@
-package entites;
+package jdr.entites;
 
 public class Personnage{
 
@@ -33,7 +33,7 @@ public class Personnage{
 
     @Override
     public String toString() {
-        return "entites.Personnage{" +
+        return "jdr.entites.Personnage{" +
                 "nom=" + nom +
                 "force=" + force +
                 ", pointsDV=" + pointsDV +

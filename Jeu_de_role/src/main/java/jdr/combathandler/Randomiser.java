@@ -1,6 +1,8 @@
+package jdr.combathandler;
+
 import java.util.Random;
 
-public class ExempleRandomiserV2  {
+public class Randomiser {
 
     public static void main(String[] args) {
 

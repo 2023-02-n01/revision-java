@@ -1,6 +1,8 @@
-import entites.Personnage;
+package jdr;
 
-import java.util.Objects;
+import jdr.combathandler.LancementCombat;
+import jdr.entites.personnage.CreationPersonnage;
+
 import java.util.Scanner;
 
 
@@ -32,9 +34,8 @@ public class MenuPrincipal {
                     break;
 
                 case 2:
-
+                    LancementCombat.main();
                     break;
-
                 case 3:
 
                     System.out.println("Votre score est de : " + CreationPersonnage.personnage.getScore());

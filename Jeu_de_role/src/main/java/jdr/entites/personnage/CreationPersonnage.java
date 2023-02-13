@@ -1,6 +1,10 @@
-import entites.Personnage;
+package jdr.entites.personnage;
 
-import java.util.Objects;
+import jdr.combathandler.Randomiser;
+import jdr.MenuPrincipal;
+import jdr.combathandler.SaisieUtilisateur;
+import jdr.entites.Personnage;
+
 import java.util.Scanner;
 
 public class CreationPersonnage {
@@ -15,9 +19,9 @@ public class CreationPersonnage {
 
     public static void nouveauPerso(){
         personnage.setNom(SaisieUtilisateur.main());
-        personnage.setForce(ExempleRandomiserV2.randomizer(12, 18));
+        personnage.setForce(Randomiser.randomizer(12, 18));
         personnage.setScore(0);
-        personnage.setPointsDV(ExempleRandomiserV2.randomizer(20, 50));
+        personnage.setPointsDV(Randomiser.randomizer(20, 50));
 
         System.out.println(personnage);
 

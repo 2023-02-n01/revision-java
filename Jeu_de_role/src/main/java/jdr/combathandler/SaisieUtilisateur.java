@@ -1,3 +1,5 @@
+package jdr.combathandler;
+
 import java.util.Scanner;
 
 public class SaisieUtilisateur {
