@@ -51,7 +51,6 @@ public class Personnage{
 
 
 
-
   /*  static int Random (){
 
         Random ran = new Random();

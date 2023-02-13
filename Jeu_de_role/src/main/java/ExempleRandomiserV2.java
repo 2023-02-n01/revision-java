@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class ExempleRandomiserV2  {
 
-    public static void main() {
+    public static void main(String[] args) {
 
         int force = randomizer(12, 18);
         int pdv = randomizer(20, 50);
