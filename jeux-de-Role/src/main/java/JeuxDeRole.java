@@ -38,8 +38,6 @@ public class JeuxDeRole {
                     break;
 
                 case 2:
-                    System.out.println("... Votre choix");
-
                     String choixMonstre = """
                             1 - Loup
                             2 - Gobelin
@@ -47,17 +45,17 @@ public class JeuxDeRole {
                             """;
                     System.out.println(choixMonstre);
 
-                    int choixAnimal = sc.nextInt();
+                    int choixAnimal = Randomiser.randomizer(1, 3);
+
                     if(choixAnimal == 1){
-                        Monstre loup = new Loup();
-                        System.out.println(loup);
+                        monstre = new Loup();
                     } else if (choixAnimal == 2){
-                        Monstre gobelin = new Gobelin();
-                        System.out.println(gobelin);
+                        monstre = new Gobelin();
                     } else {
-                        Monstre troll = new Troll();
-                        System.out.println(troll);
+                        monstre = new Troll();
                     }
+
+                    System.out.println("Vous allez combattre le :" + monstre);
 
                     System.out.println(menu);
                     break;
