@@ -1,4 +1,4 @@
-package entite;
+package Exemple;
 
 import java.util.Random;
 

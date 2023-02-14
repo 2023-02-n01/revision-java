@@ -1,4 +1,6 @@
-package entite;
+package Exemple;
+
+import Exemple.ExempleRandom;
 
 import java.util.Scanner;
 

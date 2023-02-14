@@ -1,43 +1,23 @@
 package entite;
 
-public class Personnage {
+import util.Randomiser;
+
+public class Personnage extends EtreVivant {
+
+    private String nom;
+    private int score;
+
+    public Personnage() {
+        this.setForce(Randomiser.randomizer(12, 18));
+        this.setPointsDeVie(Randomiser.randomizer(20, 50));
+    }
+
     public String getNom() {
         return nom;
     }
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    private String nom;
-    private int force;
-    private int pointsVie;
-    private int score = 0;
-
-    public Personnage() {
-    }
-
-    public Personnage(int force, int pointsVie, int score) {
-        this.nom = nom;
-        this.force = force;
-        this.pointsVie = pointsVie;
-        this.score = score;
-    }
-
-    public int getForce() {
-        return force;
-    }
-
-    public void setForce(int force) {
-        this.force = force;
-    }
-
-    public int getPointsVie() {
-        return pointsVie;
-    }
-
-    public void setPointsVie(int pointsVie) {
-        this.pointsVie = pointsVie;
     }
 
     public int getScore() {
@@ -52,8 +32,8 @@ public class Personnage {
     public String toString() {
         return "Personnage{" +
                 "nom='" + nom + '\'' +
-                ", force=" + force +
-                ", pointsVie=" + pointsVie +
+                ", force=" + getForce() +
+                ", pointsDeVie=" + getPointsDeVie() +
                 ", score=" + score +
                 '}';
     }

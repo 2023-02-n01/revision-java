@@ -1,10 +1,9 @@
-package entite;
-
-import java.util.Scanner;
+package Exemple;
 
 public class Personnage1{
+
+    public static Personnage personnage1 = new Personnage();
     public static void main() {
-        Personnage personnage1 = new Personnage();
 
         personnage1.setNom(ExempleScanner.afficheNom());
         personnage1.setForce(ExempleRandom.randomizer(12, 18));

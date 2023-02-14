@@ -1,53 +1,39 @@
-import entite.ChoixMenu;
-import entite.Personnage1;
+import entite.Personnage;
+import util.Randomiser;
 
 import java.util.Scanner;
 
 public class JeuxDeRole {
-
     public static void main(String[] args) {
 
-        ChoixMenu.afficherMenu();
-        choix();
+        System.out.println("Votre choix :");
+        String menu = """
+                1. Créer un personnage
+                2. Combattre une créature
+                3. Afficher score;
+                4. Sortir;
+                """;
 
-    }
+        System.out.println(menu);
 
-    public static void choix(){
         Scanner sc = new Scanner(System.in);
 
+        int choix = sc.nextInt();
 
-        while (true){
-            int option = sc.nextInt();
-            switch (option) {
-                case 1:
-                    System.out.println("Choix 1 : ");
-                    Personnage1.main();
+        Personnage personnage = null;
 
-                    ChoixMenu.afficherMenu();
-                    break;
+        switch (choix) {
+            case 1:
+                System.out.println(" Création d'un personnage");
 
-                case 2:
-                    System.out.println("Choix 2 : ");
-                    System.out.println("Vous avez choisi le ....");
+                personnage = new Personnage();
+                System.out.println("Entrer le nom de votre personnage :");
+                String nom = sc.next();
 
-                    ChoixMenu.afficherMenu();
+                personnage.setNom(nom);
+                personnage.setScore(0);
 
-                    break;
-
-                case 3:
-                    System.out.println("Choix 3 : ");
-                    System.out.println("Votre score est de :" + " " + Personnage1.personnage1.getScore());
-
-                    ChoixMenu.afficherMenu();
-                    break;
-
-                case 4:
-                    System.out.println("Choix 4 : ");
-                    System.out.println(" Sortir ");
-                    System.exit(0);
-                default:
-                    break;
-            }
+                System.out.println(personnage);
         }
     }
 }
