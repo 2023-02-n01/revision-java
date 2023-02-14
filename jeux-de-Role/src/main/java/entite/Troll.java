@@ -1,15 +1,18 @@
 package entite;
 
 import Exemple.ExempleRandom;
+import util.Randomiser;
 
-public class Troll {
-    public static void main(String[] args) {
-        CaracteristiqueCreature newCreature = new CaracteristiqueCreature();
+public class Troll extends Monstre{
+    public Troll() {
+        this.setForce(Randomiser.randomizer(10, 15));
+        this.setPointsDeVie(Randomiser.randomizer(20, 30));
+    }
 
-        newCreature.setCreature("Troll");
-        newCreature.setForce(ExempleRandom.randomizer(10, 15));
-        newCreature.setPointsVie(ExempleRandom.randomizer(20, 30));
-
-        System.out.println(newCreature);
+    @Override
+    public String toString() {
+        return "**** Troll " + " " +
+                "force = " + getForce() +
+                ", pointsDeVie = " + getPointsDeVie();
     }
 }

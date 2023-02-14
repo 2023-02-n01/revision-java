@@ -1,4 +1,4 @@
-import entite.Personnage;
+import entite.*;
 import util.Randomiser;
 
 import java.util.Scanner;
@@ -15,25 +15,64 @@ public class JeuxDeRole {
                 """;
 
         System.out.println(menu);
-
         Scanner sc = new Scanner(System.in);
 
-        int choix = sc.nextInt();
+        Personnage personnage = new Personnage();
+        Monstre monstre = null;
 
-        Personnage personnage = null;
+        while (true) {
+            int choix = sc.nextInt();
+            switch (choix) {
+                case 1:
+                    System.out.println(" Création d'un personnage");
 
-        switch (choix) {
-            case 1:
-                System.out.println(" Création d'un personnage");
+//                  personnage = new Personnage();
+                    System.out.println("Entrer le nom de votre personnage :");
+                    String nom = sc.next();
+                    personnage.setNom(nom);
+                    personnage.setScore(0);
 
-                personnage = new Personnage();
-                System.out.println("Entrer le nom de votre personnage :");
-                String nom = sc.next();
+                    System.out.println(personnage);
 
-                personnage.setNom(nom);
-                personnage.setScore(0);
+                    System.out.println(menu);
+                    break;
 
-                System.out.println(personnage);
+                case 2:
+                    System.out.println("... Votre choix");
+
+                    String choixMonstre = """
+                            1 - Loup
+                            2 - Gobelin
+                            3 - Troll
+                            """;
+                    System.out.println(choixMonstre);
+
+                    int choixAnimal = sc.nextInt();
+                    if(choixAnimal == 1){
+                        Monstre loup = new Loup();
+                        System.out.println(loup);
+                    } else if (choixAnimal == 2){
+                        Monstre gobelin = new Gobelin();
+                        System.out.println(gobelin);
+                    } else {
+                        Monstre troll = new Troll();
+                        System.out.println(troll);
+                    }
+
+                    System.out.println(menu);
+                    break;
+
+                case 3:
+                    System.out.println("Le score de votre personnage est de :" + personnage.getScore());
+
+                    System.out.println(menu);
+                    break;
+                case 4:
+
+                default:
+                    System.exit(0);
+                    break;
+            }
         }
     }
 }

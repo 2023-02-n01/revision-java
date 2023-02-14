@@ -1,15 +1,18 @@
 package entite;
 
 import Exemple.ExempleRandom;
+import util.Randomiser;
 
-public class Gobelin {
-    public static void main(String[] args) {
-        CaracteristiqueCreature newCreature = new CaracteristiqueCreature();
+public class Gobelin extends Monstre {
+    public Gobelin(){
+        this.setForce(Randomiser.randomizer(5, 10));
+        this.setPointsDeVie(Randomiser.randomizer(10, 15));
+    }
 
-        newCreature.setCreature("Gobelin");
-        newCreature.setForce(ExempleRandom.randomizer(5, 10));
-        newCreature.setPointsVie(ExempleRandom.randomizer(10, 15));
-
-        System.out.println(newCreature);
+    @Override
+    public String toString() {
+        return "**** Gobellin " + " " +
+                "force = " + getForce() +
+                ", pointsDeVie = " + getPointsDeVie();
     }
 }

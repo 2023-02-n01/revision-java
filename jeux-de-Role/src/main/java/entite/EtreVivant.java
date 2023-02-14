@@ -23,11 +23,11 @@ public abstract class EtreVivant {
         this.pointsDeVie = pointsDeVie;
     }
 
-    @Override
-    public String toString() {
-        return "EtreVivant{" +
-                "force=" + force +
-                ", pointsDeVie=" + pointsDeVie +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "EtreVivant{" +
+//                "force=" + force +
+//                ", pointsDeVie=" + pointsDeVie +
+//                '}';
+//    }
 }
