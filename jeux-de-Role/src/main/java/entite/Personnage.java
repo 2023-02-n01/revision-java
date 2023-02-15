@@ -30,11 +30,11 @@ public class Personnage extends EtreVivant {
 
     @Override
     public String toString() {
-        return "Personnage{" +
-                "nom='" + nom + '\'' +
-                ", force=" + getForce() +
-                ", pointsDeVie=" + getPointsDeVie() +
-                ", score=" + score +
-                '}';
+        return "nom : " + nom +
+                ", force : " + getForce() +
+                ", pointsDeVie : " + getPointsDeVie() +
+                ", score : " + score;
     }
+
+
 }
