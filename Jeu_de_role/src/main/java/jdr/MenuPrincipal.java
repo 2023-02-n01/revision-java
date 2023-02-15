@@ -1,5 +1,6 @@
 package jdr;
 
+import jdr.combathandler.CalculsAttaque;
 import jdr.combathandler.LancementCombat;
 import jdr.entites.personnage.CreationPersonnage;
 
@@ -8,11 +9,11 @@ import java.util.Scanner;
 
 public class MenuPrincipal {
 
+
     public static void main(String[] args) {
         choixMenu();
 
     }
-
 
     public static void choixMenu() {
         System.out.println("Menu:");
@@ -25,6 +26,7 @@ public class MenuPrincipal {
         Scanner scanner = new Scanner(System.in);
         int choix;
 
+
         while (true) {
             choix = scanner.nextInt();
 
@@ -34,7 +36,8 @@ public class MenuPrincipal {
                     break;
 
                 case 2:
-                    LancementCombat.main();
+                    LancementCombat lancementCombat = new LancementCombat();
+                    lancementCombat.debutCombat();
                     break;
                 case 3:
 

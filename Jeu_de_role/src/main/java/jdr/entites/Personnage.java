@@ -3,7 +3,15 @@ package jdr.entites;
 public class Personnage{
 
    public String nom;
-   private Integer force;
+
+    public Personnage() {
+        this.nom = nom;
+        this.force = force;
+        this.pointsDV = pointsDV;
+        this.score = score;
+    }
+
+    private Integer force;
    private Integer pointsDV;
    private Integer score;
 

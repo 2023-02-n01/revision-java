@@ -1,25 +1,31 @@
 package jdr.entites.creatures;
 
-public class Monstre {
-    private Integer force;
-    private Integer pointsDV;
+import jdr.entites.global.EtreVivant;
+
+import java.util.HashSet;
+
+public class Monstre extends EtreVivant {
 
 
 
-    public Integer getForce() {
-        return force;
+    public Monstre(String nom, Integer force, Integer pointsDV) {
+
+        super(nom, force, pointsDV);
+
+
+
     }
+   
 
-    public void setForce(Integer force) {
-        this.force = force;
-    }
+    @Override
+    public String toString() {
+        return "Monstre{" +
+                "nom=" + super.getNom() +
+                "force=" + super.getForce() +
+                ", PointsDV=" + super.getPointsDV() +
+                '}';
 
-    public Integer getPointsDV() {
-        return pointsDV;
-    }
 
-    public void setPointsDV(Integer pointsDV) {
-        this.pointsDV = pointsDV;
     }
 
 }
