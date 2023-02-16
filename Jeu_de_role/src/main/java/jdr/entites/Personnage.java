@@ -41,8 +41,8 @@ public class Personnage{
 
     @Override
     public String toString() {
-        return "jdr.entites.Personnage{" +
-                "nom=" + nom +
+        return "Héros{" +
+                "nom=" + nom + " " +
                 "force=" + force +
                 ", pointsDV=" + pointsDV +
                 ", score=" + score +

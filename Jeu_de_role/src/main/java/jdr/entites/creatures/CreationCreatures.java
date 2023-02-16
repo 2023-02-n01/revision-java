@@ -23,7 +23,7 @@ public class CreationCreatures {
     }
 
     public static Troll creationTroll() {
-        Troll troll = new Troll("Troll ",0,0, 3);
+        Troll troll = new Troll("Troll ",0,0, 5);
         troll.setForce(Randomiser.randomizer(10, 15));
         troll.setPointsDV(Randomiser.randomizer(20, 30));
         System.out.println(troll);

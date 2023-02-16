@@ -1,14 +1,15 @@
 package jdr.combathandler;
 
 import jdr.MenuPrincipal;
+import jdr.entites.Objets.MenuObjets;
 import jdr.entites.creatures.CreationCreatures;
-
+import jdr.entites.Objets.MenuObjets;
 import java.util.Scanner;
-import jdr.combathandler.Attaque;
+
 import jdr.entites.creatures.Monstre;
 import jdr.entites.personnage.CreationPersonnage;
 
-public class LancementCombat extends Attaque {
+public class MenuCombat extends Attaque {
 
     Monstre mon;
     public int numero = 0;
@@ -53,9 +54,13 @@ public class LancementCombat extends Attaque {
         public void debutCombat () {
 
             personnage = CreationPersonnage.personnage;
-            if (monstre != null) {
+            //Methodes Victoire/Défaite
+
+            if (monstre == null) {
+                creationMonstre();
+            }if (monstre != null) {
                 if (monstre.getPointsDV() <= 0) {
-                    personnage.setScore(monstre.getScore());
+                    personnage.setScore(personnage.getScore() + monstre.getScore());
                     System.out.println("*****Vous avez gagné le combat!!****");
                     System.out.println("Score du joueur: " + personnage.getScore());
                     System.out.println("***************V(-.o)V**************");
@@ -64,13 +69,14 @@ public class LancementCombat extends Attaque {
                 }
                 if (personnage.getPointsDV() <= 0) {
                     System.out.println("*****Vous avez perdu et êtes mort dans d'atroces souffrances...*****");
+                    System.out.println("Votre score final est de : " + personnage.getScore());
                     System.out.println("*********************༼ つ ಥ_ಥ ༽つ******************");
                     personnage = null;
                     MenuPrincipal.choixMenu();
                 }
-            }if (monstre == null){
-                creationMonstre();
+
             }
+
             //Print du menu de combat
             System.out.println("======================================");
             System.out.println("Choose your fate:");
@@ -88,22 +94,23 @@ public class LancementCombat extends Attaque {
 
             while (monstre.getPointsDV() > 0 && personnage.getPointsDV() > 0) {
                 choix = scanner.nextInt();
-
+                //Options du menu de combat
                 Attaque attaque = new Attaque();
+                MenuObjets menuObjets = new MenuObjets();
                 switch (choix) {
                     case 1:
                         attaque.main();
                         break;
 
                     case 2:
-
+                        menuObjets.main(personnage);
                         break;
                     case 3:
-
+                        //Ajouter attaque speciale "dés du diable" degats random entre 1 et 50
                         break;
                     case 4:
                         chance = Randomiser.randomizer(1, 5);
-
+                        //Méthode "chances de fuite"
                         if (chance > 2) {
                             System.out.println("*****Vous avez fui le combat*****");
                             monstre = null;
@@ -116,6 +123,7 @@ public class LancementCombat extends Attaque {
 
                             if(personnage.getPointsDV() <= 0){
                                 System.out.println("Vous êtes mort en fuyant le combat... Triste.");
+                                System.out.println("Votre score final est de : " + personnage.getScore());
                                 personnage = null;
                                 MenuPrincipal.choixMenu();
                             }

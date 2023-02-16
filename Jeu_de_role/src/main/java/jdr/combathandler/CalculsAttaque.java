@@ -56,9 +56,9 @@ public class CalculsAttaque {
             System.out.println(personnage.nom + " inflige " +  degats + " dégats");
             System.out.println("Pv restants du Monstre: " + monstre.getPointsDV());
             System.out.println("======================================");
-            System.out.println("***"+monstre+"***");
-            System.out.println(personnage.getNom() +"  VS(=O*_*)=O Q(*_*Q)VS  " +monstre.getNom());
             System.out.println("***"+personnage+"***");
+            System.out.println(personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
+            System.out.println("***"+monstre+"***");
             //Attaque Monstre
         } else if (attaquePersonnage < attaqueMonstre){
             degats = attaqueMonstre - attaquePersonnage;
@@ -71,15 +71,15 @@ public class CalculsAttaque {
             System.out.println(monstre.getNom() + " inflige " +  degats + " dégats");
             System.out.println("Pv restants du Personnage: " + personnage.getPointsDV());
             System.out.println("======================================");
-            System.out.println("***"+monstre+"***");
-            System.out.println(personnage.getNom() +"  VS(=O*_*)=O Q(*_*Q)VS  " +monstre.getNom());
             System.out.println("***"+personnage+"***");
+            System.out.println(personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
+            System.out.println("***"+monstre+"***");
         } else {
             //Print égalité
             System.out.println("Vos attaques s'annulent");
-            System.out.println("***"+monstre+"***");
-            System.out.println(personnage.getNom() +"  VS(=O*_*)=O Q(*_*Q)VS  " +monstre.getNom());
             System.out.println("***"+personnage+"***");
+            System.out.println(personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
+            System.out.println("***"+monstre+"***");
 
         }
 
