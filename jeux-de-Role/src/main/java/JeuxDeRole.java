@@ -60,9 +60,11 @@ public class JeuxDeRole {
                     System.out.println("Votre personnage : " + personnage);
                     System.out.println("Vous allez combattre le :" + monstre);
 
-                    if(personnage.getPointsDeVie() > 0){
+                    if(personnage.getPointsDeVie() >= 0){
                         CalculeForce calcul = new CalculeForce();
                         calcul.calculerForce(personnage, monstre);
+                    } else {
+                        System.out.println(personnage.getNom() + " à perdu le combat. Nouveau score : " + personnage.getScore());
                     }
 
                     System.out.println(menu);

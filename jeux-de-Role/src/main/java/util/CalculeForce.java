@@ -25,7 +25,6 @@ public class CalculeForce {
 
             if (plusFort == calculeAttaqMonstre){
 
-                System.out.println("Le vainqueur est :  monstre");
                 quantiteDegats = calculeAttaqMonstre - calculeAttaqPersonnage;
                 personnage.setPointsDeVie(personnage.getPointsDeVie() - quantiteDegats);
 
