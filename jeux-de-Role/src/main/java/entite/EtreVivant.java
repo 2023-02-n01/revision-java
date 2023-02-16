@@ -1,5 +1,7 @@
 package entite;
 
+import Exemple.Personnage;
+
 public abstract class EtreVivant {
     private Integer force;
     private Integer pointsDeVie;
@@ -23,11 +25,4 @@ public abstract class EtreVivant {
         this.pointsDeVie = pointsDeVie;
     }
 
-//    @Override
-//    public String toString() {
-//        return "EtreVivant{" +
-//                "force=" + force +
-//                ", pointsDeVie=" + pointsDeVie +
-//                '}';
-//    }
 }

@@ -1,7 +1,10 @@
 import entite.*;
+import util.CalculeForce;
+import util.CalculeForce.*;
 import util.Randomiser;
 
 import java.util.Scanner;
+
 
 public class JeuxDeRole {
     public static void main(String[] args) {
@@ -26,7 +29,6 @@ public class JeuxDeRole {
                 case 1:
                     System.out.println(" Création d'un personnage");
 
-//                  personnage = new Personnage();
                     System.out.println("Entrer le nom de votre personnage :");
                     String nom = sc.next();
                     personnage.setNom(nom);
@@ -59,25 +61,8 @@ public class JeuxDeRole {
                     System.out.println("Vous allez combattre le :" + monstre);
 
                     if(personnage.getPointsDeVie() > 0){
-                        int calculeForcePersonnage = personnage.getForce() + Randomiser.randomizer(1, 10);
-                        int calculeForceMonstre = monstre.getForce() + Randomiser.randomizer(1, 10);
-
-                        int plusFort = Math.max(calculeForcePersonnage, calculeForceMonstre);
-
-                        // Celui dont l’attaque est la plus forte remporte le tour;
-                        if(plusFort == calculeForcePersonnage)
-                            System.out.println("Le vainqueur est : " + personnage.getNom());
-
-                        if(plusFort == calculeForceMonstre)
-                            System.out.println("Le vainqueur est : " + monstre);
-
-                        /* Celui  qui  remporte  le tour  inflige  une  quantité  de  dégats  égale  à
-                            la différence entre les 2 valeurs d’attaque calculées précédemment.
-                         */
-
-                    } else {
-                        System.out.println("Votre personnage est décédé. Il a obtenu le score de " + personnage.getScore() + " points");
-                        System.out.println();
+                        CalculeForce calcul = new CalculeForce();
+                        calcul.calculerForce(personnage, monstre);
                     }
 
                     System.out.println(menu);
@@ -88,6 +73,7 @@ public class JeuxDeRole {
 
                     System.out.println(menu);
                     break;
+
                 case 4:
 
                 default:

@@ -35,6 +35,4 @@ public class Personnage extends EtreVivant {
                 ", pointsDeVie : " + getPointsDeVie() +
                 ", score : " + score;
     }
-
-
 }
