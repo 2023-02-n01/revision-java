@@ -5,6 +5,7 @@ public abstract class EtreVivant {
     private String nom;
     private Integer force;
     private Integer pointsDV;
+    private Integer score;
 
     public String getNom() {
         return nom;
@@ -22,6 +23,7 @@ public abstract class EtreVivant {
                 "nom=" + nom +
                 "force=" + force +
                 ", PointsDV=" + pointsDV +
+                "score=" + score +
                 '}';
     }
 
@@ -29,10 +31,11 @@ public abstract class EtreVivant {
         return force;
     }
 
-    public EtreVivant(String nom,Integer force, Integer pointsDV) {
+    public EtreVivant(String nom, Integer force, Integer pointsDV, Integer score) {
         this.nom = nom;
         this.force = force;
-        pointsDV = pointsDV;
+        this.pointsDV = pointsDV;
+        this.score = score;
     }
 
     public void setForce(Integer force) {
@@ -47,5 +50,11 @@ public abstract class EtreVivant {
         this.pointsDV = pointsDV;
     }
 
+    public Integer getScore() {
+        return score;
+    }
 
+    public void setScore(Integer score) {
+        this.score = score;
+    }
 }

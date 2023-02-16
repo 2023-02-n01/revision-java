@@ -2,15 +2,13 @@ package jdr.entites.creatures;
 
 import jdr.entites.global.EtreVivant;
 
-import java.util.HashSet;
-
 public class Monstre extends EtreVivant {
 
 
 
-    public Monstre(String nom, Integer force, Integer pointsDV) {
+    public Monstre(String nom, Integer force, Integer pointsDV, Integer score) {
 
-        super(nom, force, pointsDV);
+        super(nom, force, pointsDV, score);
 
 
 
@@ -23,6 +21,7 @@ public class Monstre extends EtreVivant {
                 "nom=" + super.getNom() +
                 "force=" + super.getForce() +
                 ", PointsDV=" + super.getPointsDV() +
+                "score=" + super.getScore() +
                 '}';
 
 

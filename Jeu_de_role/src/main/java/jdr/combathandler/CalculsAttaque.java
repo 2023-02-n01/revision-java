@@ -40,8 +40,55 @@ public class CalculsAttaque {
 
         System.out.println("Force du monstre :" + attaqueMonstre);
 
+    }
+    //*****************************************************************
 
-        /*if (lancementCombat.numero == 1 ) {
+    public void calculAttaque(){
+        //Attaque personnage
+        if (attaquePersonnage > attaqueMonstre){
+            degats = attaquePersonnage - attaqueMonstre;
+            monstre.setPointsDV(monstre.getPointsDV() - degats);
+            if(degats > 10){
+                System.out.println("*******Coup critique!!!**********");
+            }
+            //Print interactions victoire personnage
+            System.out.println("======================================");
+            System.out.println(personnage.nom + " inflige " +  degats + " dégats");
+            System.out.println("Pv restants du Monstre: " + monstre.getPointsDV());
+            System.out.println("======================================");
+            System.out.println("***"+monstre+"***");
+            System.out.println(personnage.getNom() +"  VS(=O*_*)=O Q(*_*Q)VS  " +monstre.getNom());
+            System.out.println("***"+personnage+"***");
+            //Attaque Monstre
+        } else if (attaquePersonnage < attaqueMonstre){
+            degats = attaqueMonstre - attaquePersonnage;
+            personnage.setPointsDV(personnage.getPointsDV() - degats);
+            if(degats > 10){
+                System.out.println("*******Coup critique!!!**********");
+            }
+            //Print interactions victoire monstre
+            System.out.println("======================================");
+            System.out.println(monstre.getNom() + " inflige " +  degats + " dégats");
+            System.out.println("Pv restants du Personnage: " + personnage.getPointsDV());
+            System.out.println("======================================");
+            System.out.println("***"+monstre+"***");
+            System.out.println(personnage.getNom() +"  VS(=O*_*)=O Q(*_*Q)VS  " +monstre.getNom());
+            System.out.println("***"+personnage+"***");
+        } else {
+            //Print égalité
+            System.out.println("Vos attaques s'annulent");
+            System.out.println("***"+monstre+"***");
+            System.out.println(personnage.getNom() +"  VS(=O*_*)=O Q(*_*Q)VS  " +monstre.getNom());
+            System.out.println("***"+personnage+"***");
+
+        }
+
+    }
+
+}
+
+//Exemple calcul raté
+     /*if (lancementCombat.numero == 1 ) {
             Loup loup = CreationCreatures.creationLoup();
             forceMonstre = loup.getForce();
             pvMonstre = loup.getPointsDV();
@@ -68,51 +115,6 @@ public class CalculsAttaque {
             return forceMonstre;
 
         }*/
-
-    }
-
-    public void calculAttaque(){
-        //Attaque personnage
-        if (attaquePersonnage > attaqueMonstre){
-            degats = attaquePersonnage - attaqueMonstre;
-            monstre.setPointsDV(monstre.getPointsDV() - degats);
-            if(degats > 10){
-                System.out.println("*******Coup critique!!!**********");
-            }
-            //Print interactions victoire personnage
-            System.out.println("======================================");
-            System.out.println(personnage.nom + " inflige " +  degats + " dégats");
-            System.out.println("Pv restants du Monstre: " + monstre.getPointsDV());
-            System.out.println("======================================");
-            System.out.println("***"+monstre+"***");
-            System.out.println("=vs=vs=vs===(=O*_*)=O Q(*_*Q)===vs=vs=vs=");
-            System.out.println("***"+personnage+"***");
-            //Attaque Monstre
-        } else if (attaquePersonnage < attaqueMonstre){
-            degats = attaqueMonstre - attaquePersonnage;
-            personnage.setPointsDV(personnage.getPointsDV() - degats);
-            if(degats > 10){
-                System.out.println("*******Coup critique!!!**********");
-            }
-            //Print interactions victoire monstre
-            System.out.println("======================================");
-            System.out.println(monstre.getNom() + " inflige " +  degats + " dégats");
-            System.out.println("Pv restants du Personnage: " + personnage.getPointsDV());
-            System.out.println("======================================");
-            System.out.println("***"+monstre+"***");
-            System.out.println("=vs=vs=vs===(=O*_*)=O Q(*_*Q)===vs=vs=vs=");
-            System.out.println("***"+personnage+"***");
-        } else {
-            //Print égalité
-            System.out.println("Vos attaques s'annulent");
-            System.out.println("***"+monstre+"***");
-            System.out.println("=vs=vs=vs===(=O*_*)=O Q(*_*Q)===vs=vs=vs=");
-            System.out.println("***"+personnage+"***");
-
-        }
-    }
-
-}
 
 
 

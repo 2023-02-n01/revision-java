@@ -55,7 +55,9 @@ public class LancementCombat extends Attaque {
             personnage = CreationPersonnage.personnage;
             if (monstre != null) {
                 if (monstre.getPointsDV() <= 0) {
+                    personnage.setScore(monstre.getScore());
                     System.out.println("*****Vous avez gagné le combat!!****");
+                    System.out.println("Score du joueur: " + personnage.getScore());
                     System.out.println("***************V(-.o)V**************");
                     monstre = null;
                     MenuPrincipal.choixMenu();

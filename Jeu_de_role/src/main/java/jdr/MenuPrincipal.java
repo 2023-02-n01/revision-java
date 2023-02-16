@@ -2,6 +2,7 @@ package jdr;
 
 import jdr.combathandler.CalculsAttaque;
 import jdr.combathandler.LancementCombat;
+import jdr.entites.Personnage;
 import jdr.entites.personnage.CreationPersonnage;
 
 import java.util.Scanner;
@@ -25,7 +26,8 @@ public class MenuPrincipal {
 
         Scanner scanner = new Scanner(System.in);
         int choix;
-
+        String yesno = scanner.nextLine();
+        Personnage personnage = new Personnage();
 
         while (true) {
             choix = scanner.nextInt();
