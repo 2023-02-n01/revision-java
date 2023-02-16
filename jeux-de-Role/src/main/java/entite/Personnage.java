@@ -5,11 +5,11 @@ import util.Randomiser;
 public class Personnage extends EtreVivant {
 
     private String nom;
-    private int score;
 
     public Personnage() {
         this.setForce(Randomiser.randomizer(12, 18));
         this.setPointsDeVie(Randomiser.randomizer(20, 50));
+        this.getScore();
     }
 
     public String getNom() {
@@ -20,19 +20,11 @@ public class Personnage extends EtreVivant {
         this.nom = nom;
     }
 
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     @Override
     public String toString() {
         return "nom : " + nom +
                 ", force : " + getForce() +
                 ", pointsDeVie : " + getPointsDeVie() +
-                ", score : " + score;
+                ", score : " + getScore();
     }
 }

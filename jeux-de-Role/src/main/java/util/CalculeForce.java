@@ -10,14 +10,9 @@ public class CalculeForce {
     int quantiteDegats;
     public void calculerForce(Personnage personnage, Monstre monstre) {
 
-
-
         do {
             calculeAttaqPersonnage = personnage.getForce() + Randomiser.randomizer(1, 10);
             calculeAttaqMonstre = monstre.getForce() + Randomiser.randomizer(1, 10);
-
-//            System.out.println(calculeAttaqMonstre);
-//            System.out.println(calculeAttaqPersonnage);
 
             plusFort = Math.max(calculeAttaqPersonnage, calculeAttaqMonstre);
 
@@ -32,6 +27,8 @@ public class CalculeForce {
 
 
             } else if (plusFort == calculeAttaqPersonnage) {
+
+                personnage.setScore(personnage.getScore() + monstre.getScore());
                 quantiteDegats = calculeAttaqPersonnage - calculeAttaqMonstre;
                 monstre.setPointsDeVie(monstre.getPointsDeVie() - quantiteDegats);
 
@@ -42,7 +39,7 @@ public class CalculeForce {
 
 
             if (plusFort == calculeAttaqPersonnage) {
-               System.out.println("Le vainqueur est : " + personnage.getNom());
+               System.out.println("Le vainqueur est : " + personnage.getNom() + " *** Score : " + personnage.getScore());
 //
             }
 //

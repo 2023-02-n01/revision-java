@@ -65,6 +65,7 @@ public class JeuxDeRole {
                         calcul.calculerForce(personnage, monstre);
                     } else {
                         System.out.println(personnage.getNom() + " à perdu le combat. Nouveau score : " + personnage.getScore());
+                        System.exit(0);
                     }
 
                     System.out.println(menu);
