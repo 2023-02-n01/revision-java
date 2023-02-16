@@ -48,7 +48,7 @@ public class MenuPrincipal {
                     choixMenu();
 
                 case 4:
-                    System.out.println("Merci d'avoir joué :)");
+                    System.out.println("Merci d'avoir joué! <3");
                     System.exit(0);
                     break;
 

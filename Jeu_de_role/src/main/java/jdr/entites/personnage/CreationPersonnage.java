@@ -17,16 +17,15 @@ public class CreationPersonnage {
 
     public static Personnage personnage = new Personnage();
 
-    public static void nouveauPerso(){
+    public static Personnage nouveauPerso(){
         personnage.setNom(SaisieUtilisateur.main());
         personnage.setForce(Randomiser.randomizer(12, 18));
         personnage.setScore(0);
         personnage.setPointsDV(Randomiser.randomizer(20, 50));
 
         System.out.println(personnage);
-
         refairePerso();
-
+        return personnage;
     }
 
 
