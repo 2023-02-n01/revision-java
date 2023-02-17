@@ -23,36 +23,25 @@ public class CalculeForce {
                 quantiteDegats = calculeAttaqMonstre - calculeAttaqPersonnage;
                 personnage.setPointsDeVie(personnage.getPointsDeVie() - quantiteDegats);
 
+
                 System.out.println("Points de vie Personnage :" + personnage.getPointsDeVie());
 
-
             } else if (plusFort == calculeAttaqPersonnage) {
-
                 personnage.setScore(personnage.getScore() + monstre.getScore());
                 quantiteDegats = calculeAttaqPersonnage - calculeAttaqMonstre;
                 monstre.setPointsDeVie(monstre.getPointsDeVie() - quantiteDegats);
 
                 System.out.println("Points de vie Monstre :" + monstre.getPointsDeVie());
+
             } else {
                 System.out.println("Egalite");
             }
 
-
             if (plusFort == calculeAttaqPersonnage) {
-               System.out.println("Le vainqueur est : " + personnage.getNom() + " *** Score : " + personnage.getScore());
-//
+                System.out.println("Le vainqueur est : " + personnage.getNom() + " *** Score : " + personnage.getScore());
+            } else {
+                System.out.println("Le vainqueur est : " + monstre);
             }
-//
-//            if(plusFort == calculeAttaqMonstre || plusFort > calculeAttaqMonstre) {
-//                quantiteDegats = calculeAttaqMonstre - monstre.getForce();
-//
-//                System.out.println("Le vainqueur est : " + monstre);
-//            }
-
         } while (personnage.getPointsDeVie() > 0 && monstre.getPointsDeVie() > 0);
-
-                            /* Celui  qui  remporte  le tour  inflige  une  quantité  de  dégats  égale  à
-                                la différence entre les 2 valeurs d’attaque calculées précédemment.
-                             */
     }
 }

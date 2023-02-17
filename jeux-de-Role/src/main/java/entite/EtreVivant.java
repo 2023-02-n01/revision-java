@@ -5,7 +5,7 @@ import Exemple.Personnage;
 public abstract class EtreVivant {
     private Integer force;
     private Integer pointsDeVie;
-    private int score = 0;
+    private int score;
 
     public int getScore() {
         return score;
