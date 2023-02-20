@@ -14,7 +14,7 @@ public class MenuPrincipal {
         choixMenu();
 
     }
-
+// Menu Principal (Creation perso, début du jeu, Score, Quitter le jeu)
     public static void choixMenu() {
         System.out.println("Menu:");
         System.out.println("1: Créer Personnage");

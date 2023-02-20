@@ -3,13 +3,14 @@ import jdr.combathandler.MenuCombat;
 import jdr.entites.Personnage;
 import jdr.combathandler.MenuCombat.*;
 import jdr.MenuPrincipal.*;
+import jdr.entites.Objets.MenuObjets.*;
 
 public class PotionVie {
 
     private String nom;
     private Integer pointsDV;
     private Integer nombre;
-
+    //public static Integer nombre2;
 
     public PotionVie(String nom, Integer pointsDV, Integer nombre) {
 
@@ -17,18 +18,25 @@ public class PotionVie {
         this.pointsDV = pointsDV;
         this.nombre = nombre;
     }
-
+//Méthode de Heal (utilisée avec seringues ou Medkits)
     public void potionMethod(Personnage personnage) {
-        MenuCombat lancementCombat= new MenuCombat();
+        MenuCombat lancementCombat = new MenuCombat();
         if (nombre > 0) {
             personnage.setPointsDV(personnage.getPointsDV() + pointsDV);
-            nombre = nombre -1;
+            nombre--;
             System.out.println("Vous avez récupéré: "+ pointsDV +  "PV!");
-            System.out.println("Seringues restantes: " + nombre);
+            System.out.println(nom + " restantes: " + nombre);
+            if (MenuObjets.seringue != null){
+            MenuObjets.seringue.setNombre(nombre);
+            } else if (MenuObjets.medkit != null) {
+                MenuObjets.medkit.setNombre(nombre);
+
+            }
             lancementCombat.debutCombat();
         }else{
-            System.out.println("Vous n'avez plus de Seringues!");
-            System.out.println("Seringues restantes" + nombre);
+            System.out.println("Vous n'avez plus de" + nom +"!");
+            System.out.println(nom + " restantes " + nombre);
+            lancementCombat.debutCombat();
         }
     }
 

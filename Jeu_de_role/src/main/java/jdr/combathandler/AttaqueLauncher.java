@@ -1,6 +1,6 @@
 package jdr.combathandler;
 
-public class Attaque extends CalculsAttaque {
+public class AttaqueLauncher extends CalculsAttaque {
 
 
     public void main() {

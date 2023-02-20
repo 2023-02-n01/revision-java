@@ -6,11 +6,12 @@ import jdr.entites.personnage.CreationPersonnage;
 
 public class CalculsAttaque {
 
+    public static int attaquePersonnage;
     Personnage personnage;
-    int attaquePersonnage;
+   // public int attaquePersonnage;
 
-    static Monstre monstre;
-    int attaqueMonstre;
+    public static Monstre monstre;
+    public static int attaqueMonstre;
     int degats;
 
 
@@ -59,6 +60,7 @@ public class CalculsAttaque {
             System.out.println("***"+personnage+"***");
             System.out.println(personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
             System.out.println("***"+monstre+"***");
+
             //Attaque Monstre
         } else if (attaquePersonnage < attaqueMonstre){
             degats = attaqueMonstre - attaquePersonnage;
@@ -66,6 +68,7 @@ public class CalculsAttaque {
             if(degats > 10){
                 System.out.println("*******Coup critique!!!**********");
             }
+
             //Print interactions victoire monstre
             System.out.println("======================================");
             System.out.println(monstre.getNom() + " inflige " +  degats + " dégats");
@@ -75,8 +78,10 @@ public class CalculsAttaque {
             System.out.println(personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
             System.out.println("***"+monstre+"***");
         } else {
+
             //Print égalité
             System.out.println("Vos attaques s'annulent");
+            System.out.println("======================================");
             System.out.println("***"+personnage+"***");
             System.out.println(personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
             System.out.println("***"+monstre+"***");

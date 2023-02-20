@@ -1,15 +1,16 @@
 package jdr.combathandler;
 
 import jdr.MenuPrincipal;
+import jdr.combathandler.AttaquesSpéciales.AttaqueSpecialeLauncher;
 import jdr.entites.Objets.MenuObjets;
 import jdr.entites.creatures.CreationCreatures;
-import jdr.entites.Objets.MenuObjets;
+
 import java.util.Scanner;
 
 import jdr.entites.creatures.Monstre;
 import jdr.entites.personnage.CreationPersonnage;
 
-public class MenuCombat extends Attaque {
+public class MenuCombat extends AttaqueLauncher {
 
     Monstre mon;
     public int numero = 0;
@@ -18,7 +19,7 @@ public class MenuCombat extends Attaque {
 
     }
 
-
+//Méthode de création de monstre grâce au Randomizer
     public void creationMonstre() {
         int choixmonstre = Randomiser.randomizer(1, 3);
 
@@ -55,7 +56,7 @@ public class MenuCombat extends Attaque {
 
             personnage = CreationPersonnage.personnage;
             //Methodes Victoire/Défaite
-
+//Partie méthode de confirmation victoire/défaite après combat
             if (monstre == null) {
                 creationMonstre();
             }if (monstre != null) {
@@ -65,7 +66,7 @@ public class MenuCombat extends Attaque {
                     System.out.println("Score du joueur: " + personnage.getScore());
                     System.out.println("***************V(-.o)V**************");
                     monstre = null;
-                    MenuPrincipal.choixMenu();
+                    MenuPrincipal.choixMenu(); // A remplacer par redirection interCombat(2 options: Continuer / Abandonner (ajoute 10 au score))
                 }
                 if (personnage.getPointsDV() <= 0) {
                     System.out.println("*****Vous avez perdu et êtes mort dans d'atroces souffrances...*****");
@@ -82,7 +83,10 @@ public class MenuCombat extends Attaque {
             System.out.println("Choose your fate:");
             System.out.println("1: Attaquer");
             System.out.println("2: Utiliser un objet");
-            System.out.println("3: Attaque Spéciale");
+            System.out.println("3: Attaque Spéciale(random ↓)");
+            System.out.println("     Dés du diable:(Probabilité: 80% / Réussite: 40%)");
+            System.out.println("     Rage:(Probabilité: 10% / Réussite: 100% )");
+            System.out.println("     Echec:(Probabilité: 10%)");
             System.out.println("4: Fuir");
             System.out.println("======================================");
 
@@ -94,12 +98,13 @@ public class MenuCombat extends Attaque {
 
             while (monstre.getPointsDV() > 0 && personnage.getPointsDV() > 0) {
                 choix = scanner.nextInt();
-                //Options du menu de combat
-                Attaque attaque = new Attaque();
+                //Sélection des options du menu de combat
+                AttaqueLauncher attaqueLauncher = new AttaqueLauncher();
+                AttaqueSpecialeLauncher attaqueSpecialeLauncher = new AttaqueSpecialeLauncher();
                 MenuObjets menuObjets = new MenuObjets();
                 switch (choix) {
                     case 1:
-                        attaque.main();
+                        attaqueLauncher.main();
                         break;
 
                     case 2:
@@ -107,6 +112,7 @@ public class MenuCombat extends Attaque {
                         break;
                     case 3:
                         //Ajouter attaque speciale "dés du diable" degats random entre 1 et 50
+                        attaqueSpecialeLauncher.main();
                         break;
                     case 4:
                         chance = Randomiser.randomizer(1, 5);
