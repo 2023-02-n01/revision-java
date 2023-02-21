@@ -1,4 +1,4 @@
-package jdr.entites;
+package jdr.entites.personnage;
 
 public class Personnage{
 
@@ -9,11 +9,21 @@ public class Personnage{
         this.force = force;
         this.pointsDV = pointsDV;
         this.score = score;
+        this.mana = mana;
     }
 
     private Integer force;
    private Integer pointsDV;
    private Integer score;
+   private Integer mana;
+
+    public Integer getMana() {
+        return mana;
+    }
+
+    public void setMana(Integer mana) {
+        this.mana = mana;
+    }
 
     public Integer getForce() {
         return force;

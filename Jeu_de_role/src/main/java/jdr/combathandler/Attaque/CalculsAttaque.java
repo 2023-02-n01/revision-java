@@ -1,13 +1,14 @@
-package jdr.combathandler;
+package jdr.combathandler.Attaque;
 
-import jdr.entites.Personnage;
+import jdr.combathandler.Randomiser;
+import jdr.entites.personnage.Personnage;
 import jdr.entites.creatures.Monstre;
 import jdr.entites.personnage.CreationPersonnage;
 
 public class CalculsAttaque {
 
     public static int attaquePersonnage;
-    Personnage personnage;
+    protected Personnage personnage;
    // public int attaquePersonnage;
 
     public static Monstre monstre;
@@ -37,6 +38,7 @@ public class CalculsAttaque {
         int random = Randomiser.randomizer(1, 10);
         System.out.println("======================================");
         System.out.println("ʕง•ᴥ•ʔงForce supplémentaire du monstre = " + random);
+        System.out.println("");
         attaqueMonstre = monstre.getForce()+random;
 
         System.out.println("Force du monstre :" + attaqueMonstre);
@@ -49,11 +51,11 @@ public class CalculsAttaque {
         if (attaquePersonnage > attaqueMonstre){
             degats = attaquePersonnage - attaqueMonstre;
             monstre.setPointsDV(monstre.getPointsDV() - degats);
+            //Print interactions victoire personnage
+            System.out.println("======================================");
             if(degats > 10){
                 System.out.println("*******Coup critique!!!**********");
             }
-            //Print interactions victoire personnage
-            System.out.println("======================================");
             System.out.println(personnage.nom + " inflige " +  degats + " dégats");
             System.out.println("Pv restants du Monstre: " + monstre.getPointsDV());
             System.out.println("======================================");
@@ -65,12 +67,13 @@ public class CalculsAttaque {
         } else if (attaquePersonnage < attaqueMonstre){
             degats = attaqueMonstre - attaquePersonnage;
             personnage.setPointsDV(personnage.getPointsDV() - degats);
-            if(degats > 10){
-                System.out.println("*******Coup critique!!!**********");
-            }
+
 
             //Print interactions victoire monstre
             System.out.println("======================================");
+            if(degats > 10){
+                System.out.println("*******Coup critique!!!**********");
+            }
             System.out.println(monstre.getNom() + " inflige " +  degats + " dégats");
             System.out.println("Pv restants du Personnage: " + personnage.getPointsDV());
             System.out.println("======================================");

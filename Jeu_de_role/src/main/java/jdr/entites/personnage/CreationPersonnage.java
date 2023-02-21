@@ -3,7 +3,6 @@ package jdr.entites.personnage;
 import jdr.combathandler.Randomiser;
 import jdr.MenuPrincipal;
 import jdr.combathandler.SaisieUtilisateur;
-import jdr.entites.Personnage;
 
 import java.util.Scanner;
 
@@ -17,11 +16,20 @@ public class CreationPersonnage {
 
     public static Personnage personnage = new Personnage();
 
+    public static Personnage getPersonnage() {
+        return personnage;
+    }
+
+    public static void setPersonnage(Personnage personnage) {
+        CreationPersonnage.personnage = personnage;
+    }
+
     public static Personnage nouveauPerso(){
         personnage.setNom(SaisieUtilisateur.main());
         personnage.setForce(Randomiser.randomizer(12, 18));
         personnage.setScore(0);
         personnage.setPointsDV(Randomiser.randomizer(20, 50));
+        personnage.setMana(100);
 
         System.out.println(personnage);
         refairePerso();
@@ -39,7 +47,8 @@ public class CreationPersonnage {
             case "y" -> nouveauPerso();
             case "n" -> {System.out.println("Retour au menu");
             MenuPrincipal.choixMenu();}
-
+            default -> {System.out.println("! Choix invalide, veuillez réessayer !" );
+            refairePerso();}
         }
 
     }

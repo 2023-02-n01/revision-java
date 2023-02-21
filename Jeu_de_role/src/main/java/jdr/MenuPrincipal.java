@@ -1,7 +1,6 @@
 package jdr;
 
-import jdr.combathandler.MenuCombat;
-import jdr.entites.Personnage;
+import jdr.combathandler.Attaque.MenuCombat;
 import jdr.entites.personnage.CreationPersonnage;
 
 import java.util.Scanner;
@@ -41,6 +40,8 @@ public class MenuPrincipal {
                 case 3:
 
                     System.out.println("Votre score est de : " + CreationPersonnage.personnage.getScore());
+                    System.out.println("Monstres battus : " + MenuCombat.monstresBattus);
+                    System.out.println("");
                     System.out.println("Retour au menu");
                     System.out.println("======================================");
 

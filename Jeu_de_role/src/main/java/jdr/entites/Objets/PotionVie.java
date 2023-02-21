@@ -1,9 +1,6 @@
 package jdr.entites.Objets;
-import jdr.combathandler.MenuCombat;
-import jdr.entites.Personnage;
-import jdr.combathandler.MenuCombat.*;
-import jdr.MenuPrincipal.*;
-import jdr.entites.Objets.MenuObjets.*;
+import jdr.combathandler.Attaque.MenuCombat;
+import jdr.entites.personnage.Personnage;
 
 public class PotionVie {
 
