@@ -1,4 +1,4 @@
-package jdr.combathandler;
+package jdr.combatHandler;
 
 import java.util.Random;
 

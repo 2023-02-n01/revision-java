@@ -1,8 +1,8 @@
 package jdr.entites.personnage;
 
-import jdr.combathandler.Randomiser;
+import jdr.combatHandler.Randomiser;
 import jdr.MenuPrincipal;
-import jdr.combathandler.SaisieUtilisateur;
+import jdr.combatHandler.SaisieUtilisateur;
 
 import java.util.Scanner;
 
@@ -30,6 +30,7 @@ public class CreationPersonnage {
         personnage.setScore(0);
         personnage.setPointsDV(Randomiser.randomizer(20, 50));
         personnage.setMana(100);
+        personnage.setGils(50);
 
         System.out.println(personnage);
         refairePerso();

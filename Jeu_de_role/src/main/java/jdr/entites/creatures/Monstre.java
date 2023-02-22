@@ -6,9 +6,9 @@ public class Monstre extends EtreVivant {
 
 
 
-    public Monstre(String nom, Integer force, Integer pointsDV, Integer score) {
+    public Monstre(String nom, Integer force, Integer pointsDV, Integer score, Integer gils) {
 
-        super(nom, force, pointsDV, score);
+        super(nom, force, pointsDV, score, gils);
 
 
 
@@ -19,9 +19,10 @@ public class Monstre extends EtreVivant {
     public String toString() {
         return "Monstre{" +
                 "nom=" + super.getNom() +
-                "force=" + super.getForce() +
+                ", force=" + super.getForce() +
                 ", PointsDV=" + super.getPointsDV() +
-                "score=" + super.getScore() +
+                ", score=" + super.getScore() +
+                ", gils=" + super.getGils() +
                 '}';
 
 

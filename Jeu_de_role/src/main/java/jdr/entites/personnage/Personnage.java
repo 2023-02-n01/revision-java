@@ -10,12 +10,22 @@ public class Personnage{
         this.pointsDV = pointsDV;
         this.score = score;
         this.mana = mana;
+        this.gils = gils;
     }
 
     private Integer force;
    private Integer pointsDV;
    private Integer score;
    private Integer mana;
+   private Integer gils;
+
+    public Integer getGils() {
+        return gils;
+    }
+
+    public void setGils(Integer gils) {
+        this.gils = gils;
+    }
 
     public Integer getMana() {
         return mana;
@@ -53,9 +63,11 @@ public class Personnage{
     public String toString() {
         return "Héros{" +
                 "nom=" + nom + " " +
-                "force=" + force +
+                ", force=" + force +
                 ", pointsDV=" + pointsDV +
                 ", score=" + score +
+                ", mana=" + mana +
+                ", gils=" + gils +
                 '}';
     }
 

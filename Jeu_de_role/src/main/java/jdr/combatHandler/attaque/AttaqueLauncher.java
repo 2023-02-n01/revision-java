@@ -1,7 +1,6 @@
-package jdr.combathandler.Attaque;
+package jdr.combatHandler.attaque;
 
-import jdr.combathandler.Attaque.CalculsAttaque;
-import jdr.combathandler.Attaque.MenuCombat;
+import jdr.combatHandler.MenuCombat;
 
 public class AttaqueLauncher extends CalculsAttaque {
 

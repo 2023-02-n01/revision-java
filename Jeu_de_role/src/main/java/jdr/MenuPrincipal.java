@@ -1,9 +1,11 @@
 package jdr;
 
-import jdr.combathandler.Attaque.MenuCombat;
+import jdr.combatHandler.MenuCombat;
 import jdr.entites.personnage.CreationPersonnage;
 
 import java.util.Scanner;
+
+import static jdr.entites.personnage.CreationPersonnage.personnage;
 
 
 public class MenuPrincipal {
@@ -18,7 +20,7 @@ public class MenuPrincipal {
         System.out.println("Menu:");
         System.out.println("1: Créer Personnage");
         System.out.println("2: Commencer l'Aventure");
-        System.out.println("3: Afficher le Score");
+        System.out.println("3: Afficher le Score, Gils");
         System.out.println("4: Quitter le jeu :(");
         System.out.println("======================================");
 
@@ -41,7 +43,7 @@ public class MenuPrincipal {
 
                     System.out.println("Votre score est de : " + CreationPersonnage.personnage.getScore());
                     System.out.println("Monstres battus : " + MenuCombat.monstresBattus);
-                    System.out.println("");
+                    System.out.println("Vous avez " + personnage.getGils() + " Gils \n");
                     System.out.println("Retour au menu");
                     System.out.println("======================================");
 

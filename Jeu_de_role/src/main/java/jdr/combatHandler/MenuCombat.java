@@ -1,10 +1,9 @@
-package jdr.combathandler.Attaque;
+package jdr.combatHandler;
 
 import jdr.MenuPrincipal;
-import jdr.combathandler.AttaquesSpéciales.AttaqueSpecialeLauncher;
-import jdr.combathandler.MenuContinuerFin;
-import jdr.combathandler.Randomiser;
-import jdr.entites.Objets.MenuObjets;
+import jdr.combatHandler.attaque.AttaqueLauncher;
+import jdr.combatHandler.attaquesSpéciales.AttaqueSpecialeLauncher;
+import jdr.entites.objets.MenuObjets;
 import jdr.entites.creatures.CreationCreatures;
 
 import java.util.Scanner;
@@ -67,16 +66,17 @@ public class MenuCombat extends AttaqueLauncher {
             if (monstre == null) {
                 System.out.println("======================================");
                 creationMonstre();
-                System.out.println("");
+                System.out.println(" ");
             }if (monstre != null) {
                 if (monstre.getPointsDV() <= 0) {
                     personnage.setScore(personnage.getScore() + monstre.getScore());
+                    personnage.setGils(personnage.getGils() + monstre.getGils());
                     System.out.println("*****Vous avez gagné le combat!!****");
                     System.out.println("Score du joueur: " + personnage.getScore());
                     System.out.println("***************V(-.o)V**************");
                     monstresBattus = monstresBattus + 1;
                     monstre = null;
-                    MenuContinuerFin.continueMenu();
+                    MenuContinuerFin.rencontreShop();
                 }
                 if (personnage.getPointsDV() <= 0) {
                     System.out.println("*****Vous avez perdu et êtes mort dans d'atroces souffrances...*****");
@@ -151,6 +151,12 @@ public class MenuCombat extends AttaqueLauncher {
                         }
 
                         break;
+                    default:
+                        System.out.println("! Choix invalide, veuillez réessayer !");
+                        System.out.println("======================================");
+
+                        debutCombat();
+                        
                 }
             }
         }

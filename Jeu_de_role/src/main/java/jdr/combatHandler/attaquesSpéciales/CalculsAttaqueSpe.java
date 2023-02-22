@@ -1,8 +1,8 @@
-package jdr.combathandler.AttaquesSpéciales;
+package jdr.combatHandler.attaquesSpéciales;
 
-import jdr.combathandler.Attaque.CalculsAttaque;
-import jdr.combathandler.Attaque.MenuCombat;
-import jdr.combathandler.Randomiser;
+import jdr.combatHandler.attaque.CalculsAttaque;
+import jdr.combatHandler.MenuCombat;
+import jdr.combatHandler.Randomiser;
 import jdr.entites.personnage.Personnage;
 import jdr.entites.creatures.Monstre;
 import jdr.entites.personnage.CreationPersonnage;
@@ -55,11 +55,11 @@ public class CalculsAttaqueSpe extends CalculsAttaque {
         int randomfail = Randomiser.randomizer(-5, random);
         int chance;
         chance = Randomiser.randomizer(1, 10);
-        System.out.println("Déclenchement: [Dés du Diable] ⚀⚅(Bonus d'attaque= (1-25) (40% de succès/ Peut être fatal en cas d'échec))");
+        System.out.println("Déclenchement: [Dés du Diable] ⚀⚅(Bonus d'attaque= (1-25) (70% de succès/ Peut être fatal en cas d'échec))");
         System.out.println("Mana restant :" + personnage.getMana());
         System.out.println("");
 
-        if (chance <= 4) {
+        if (chance <= 7) {
             System.out.println("[Succès!] Les dés vous accordent leur pouvoir, Lady Luck fera-t-elle de même?");
             System.out.println("Avantage des Dés du Diable: " + random);
             System.out.println("======================================");
@@ -72,8 +72,9 @@ public class CalculsAttaqueSpe extends CalculsAttaque {
         } else {
             System.out.println("[Echec...] Les dés sont mal pipés, votre attaque aussi...");
             System.out.println("Pénalité dés du diable = Avantage:" + random + " / pénalité: " + randomfail * 2);
-            //personnage = CreationPersonnage.personnage;
+            System.out.println("======================================");
             attaquePersonnage = ((personnage.getForce() + random) - Math.abs(randomfail * 2));
+            System.out.println("(╯°□°)╯Force finale du héros = " + attaquePersonnage);
             System.out.println("Attaque dés pipés :" + attaquePersonnage);
         }
 
@@ -103,7 +104,7 @@ public class CalculsAttaqueSpe extends CalculsAttaque {
 
     public void getPlayerInfoEchec() {
         int random2;
-        random2 = Randomiser.randomizer(1, 4);
+        random2 = Randomiser.randomizer(1, 5);
 
         if (random2 >= 4) {
             System.out.println("[Echec Critique] Vous préparez une attaque... puis votre pied glisse et vous vous effondrez sur la garde de votre épée. -2 PV/ 0 défense");

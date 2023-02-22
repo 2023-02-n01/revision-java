@@ -1,6 +1,6 @@
-package jdr.combathandler.Attaque;
+package jdr.combatHandler.attaque;
 
-import jdr.combathandler.Randomiser;
+import jdr.combatHandler.Randomiser;
 import jdr.entites.personnage.Personnage;
 import jdr.entites.creatures.Monstre;
 import jdr.entites.personnage.CreationPersonnage;
@@ -75,6 +75,7 @@ public class CalculsAttaque {
                 System.out.println("*******Coup critique!!!**********");
             }
             System.out.println(monstre.getNom() + " inflige " +  degats + " dégats");
+            System.out.println("             Q(*_*Q)      ");
             System.out.println("Pv restants du Personnage: " + personnage.getPointsDV());
             System.out.println("======================================");
             System.out.println("***"+personnage+"***");

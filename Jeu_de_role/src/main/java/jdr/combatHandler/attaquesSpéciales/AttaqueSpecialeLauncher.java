@@ -1,6 +1,6 @@
-package jdr.combathandler.AttaquesSpéciales;
-import jdr.combathandler.Attaque.CalculsAttaque;
-import jdr.combathandler.Attaque.MenuCombat;
+package jdr.combatHandler.attaquesSpéciales;
+import jdr.combatHandler.attaque.CalculsAttaque;
+import jdr.combatHandler.MenuCombat;
 
 public class AttaqueSpecialeLauncher extends CalculsAttaqueSpe {
     int getAttMonstre;
