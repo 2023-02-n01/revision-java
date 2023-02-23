@@ -5,6 +5,8 @@ import jdr.entites.personnage.CreationPersonnage;
 import jdr.entites.personnage.Personnage;
 import jdr.entites.shopHandler.Shop;
 
+import static jdr.entites.objets.MenuObjets.*;
+
 public class PotionMana {
 
     String nom;
@@ -22,22 +24,26 @@ public class PotionMana {
 
     public void tomeMethod(Personnage personnage) {
         MenuCombat lancementCombat = new MenuCombat();
-        if (nombre > 0) {
-            personnage.setMana(personnage.getMana() + pointsMana);
-            nombre--;
-            System.out.println("Vous avez récupéré: "+ pointsMana +  " points de Mana!");
-            System.out.println(nom + " restantes: " + nombre);
-            if (MenuObjets.tomeMineur != null){
-                MenuObjets.tomeMineur.setNombre(nombre);
-            } else if (MenuObjets.medkit != null) {
-                MenuObjets.tomeMajeur.setNombre(nombre);
+        if (tomeMineur == MenuObjets.potionmanaactive && tomeMineur.nombre > 0) {
+            personnage.setMana(personnage.getMana() + tomeMineur.pointsMana);
 
-            }
+            tomeMineur.setNombre(tomeMineur.getNombre() - 1);
+            System.out.println("Vous avez récupéré: "+ pointsMana +  " de Mana!");
+            System.out.println(nom + " restants: " + tomeMineur.nombre);
             lancementCombat.debutCombat();
-        }else{
+        } else if (tomeMajeur == MenuObjets.potionmanaactive && tomeMajeur.nombre > 0){
+            personnage.setMana(personnage.getMana() + tomeMajeur.pointsMana );
+            tomeMajeur.setNombre(tomeMajeur.getNombre() - 1);
+            System.out.println("Vous avez récupéré: "+ pointsMana +  " de Mana!");
+            System.out.println(nom + " restants: " + tomeMajeur.nombre);
+            lancementCombat.debutCombat();
+
+
+        }else {
             System.out.println("Vous n'avez plus de " + nom +"!");
             System.out.println(nom + " restantes " + nombre);
             lancementCombat.debutCombat();
+
         }
     }
 

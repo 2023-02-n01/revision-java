@@ -30,6 +30,7 @@ public class MenuCombat extends AttaqueLauncher {
 
 
         if (monstre == null || monstre.getPointsDV() <= 0) {
+            System.out.println("Une nouvelle menace apparaît!");
             switch (choixmonstre) {
 
                 case 1:
@@ -62,6 +63,10 @@ public class MenuCombat extends AttaqueLauncher {
         public void debutCombat () {
 
             personnage = CreationPersonnage.personnage;
+            if(personnage == null){
+                CreationPersonnage.nouveauPerso();
+               personnage = CreationPersonnage.personnage;
+            }
             //Methodes Victoire/Défaite
 //Partie méthode de confirmation victoire/défaite après combat
             if (monstre == null) {
@@ -72,18 +77,24 @@ public class MenuCombat extends AttaqueLauncher {
                 if (monstre.getPointsDV() <= 0) {
                     personnage.setScore(personnage.getScore() + monstre.getScore());
                     personnage.setGils(personnage.getGils() + monstre.getGils());
-                    System.out.println("*****Vous avez gagné le combat!!****");
-                    System.out.println("Score du joueur: " + personnage.getScore());
-                    System.out.println("***************V(-.o)V************** \n");
+                    System.out.println("+======================================+");
+                    System.out.println("|*****Vous avez gagné le combat!!****  |");
+                    System.out.println("|Score du joueur: " + personnage.getScore());
+                    System.out.println("|                V(-.o)V               |");
+                    System.out.println("+======================================+");
+                    System.out.println(" ");
                     monstresBattus = monstresBattus + 1;
                     monstre = null;
                     MenuContinuerFin.rencontreShop();
                 }
                 if (personnage.getPointsDV() <= 0) {
-                    System.out.println("*****Vous avez perdu et êtes mort dans d'atroces souffrances...*****");
-                    System.out.println("Votre score final est de : " + personnage.getScore());
-                    System.out.println("*********************༼ つ ಥ_ಥ ༽つ******************");
-                    System.out.println("Monstres battus : " + monstresBattus + "\n");
+                    System.out.println("+====================================================================+");
+                    System.out.println("|*****Vous avez perdu et êtes mort dans d'atroces souffrances...*****");
+                    System.out.println("|Votre score final est de : " + personnage.getScore());
+                    System.out.println("|*********************༼ つ ಥ_ಥ ༽つ******************");
+                    System.out.println("|Monstres battus : " + monstresBattus + "");
+                    System.out.println("+====================================================================+");
+                    System.out.println(" ");
                     personnage = null;
                     MenuPrincipal.choixMenu();
                 }
@@ -91,16 +102,19 @@ public class MenuCombat extends AttaqueLauncher {
             }
 
             //Print du menu de combat
-            System.out.println("======================================");
-            System.out.println("Choose your fate:");
-            System.out.println("1: Attaquer");
-            System.out.println("2: Utiliser un objet");
-            System.out.println("3: Attaque Spéciale(random ↓)");
-            System.out.println("     [Dés du diable]:(Probabilité: 80% / Réussite: 40%)");
-            System.out.println("     [Rage]:(Probabilité: 10% / Réussite: 100% )");
-            System.out.println("     [Echec]:(Probabilité: 10%)");
-            System.out.println("4: Fuir");
-            System.out.println("======================================");
+            System.out.println("+========================================================+");
+            System.out.println("|Choose your fate:                                       |");
+            System.out.println("|  1: Attaquer (1-10)                                    |");
+            System.out.println("|  2: Utiliser un objet                                  |");
+            System.out.println("|  3: Attaque Spéciale(random ↓)                         |");
+            System.out.println("|    [Dés du diable]:(Probabilité: 60% / Réussite: 70%)  |");
+            System.out.println("|    [Rage]:(Probabilité: 30% / Réussite: 100% )         |");
+            System.out.println("|    [Echec]:(Probabilité: 10%)                          |");
+            System.out.println("|  4: Fuir                                               |");
+            System.out.println("+========================================================+");
+            System.out.println("|Votre héros:");
+            System.out.println("|Nom= " + personnage.getNom() + ", Force= " + personnage.getForce()+ ", PV= "+ personnage.getPointsDV() + ", Mana= "+ personnage.getMana()+", Score= "+personnage.getScore());
+            System.out.println("+=========================================================");
 
             Scanner scanner = new Scanner(System.in);
             int choix;
@@ -153,8 +167,9 @@ public class MenuCombat extends AttaqueLauncher {
 
                         break;
                     default:
-                        System.out.println("! Choix invalide, veuillez réessayer !");
-                        System.out.println("======================================");
+                        System.out.println("+======================================+");
+                        System.out.println("|! Choix invalide, veuillez réessayer !|");
+                        System.out.println("+======================================+");
 
                         debutCombat();
                         

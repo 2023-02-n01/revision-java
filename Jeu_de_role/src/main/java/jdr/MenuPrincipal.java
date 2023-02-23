@@ -17,12 +17,12 @@ public class MenuPrincipal {
     }
 // Menu Principal (Creation perso, début du jeu, Score, Quitter le jeu)
     public static void choixMenu() {
-        System.out.println("Menu:");
-        System.out.println("1: Créer Personnage");
-        System.out.println("2: Commencer l'Aventure");
-        System.out.println("3: Afficher le Score, Gils");
-        System.out.println("4: Quitter le jeu :(");
-        System.out.println("======================================");
+        System.out.println("+===================================+");
+        System.out.println("|  Menu:                            |");
+        System.out.println("|  1: Commencer l'Aventure          |");
+        System.out.println("|  2: Afficher le Score, Gils, Aide |");
+        System.out.println("|  3: Quitter le jeu :(             |");
+        System.out.println("+===================================+");
 
         Scanner scanner = new Scanner(System.in);
         int choix;
@@ -31,32 +31,40 @@ public class MenuPrincipal {
             choix = scanner.nextInt();
 
             switch (choix) {
+
                 case 1:
-                    CreationPersonnage.nouveauPerso();
+                    if(personnage.getNom() == null ) {
+                        CreationPersonnage.nouveauPerso();
+                    }else{
+                        MenuCombat lancementCombat = new MenuCombat();
+                        lancementCombat.debutCombat();
+                    }
                     break;
-
                 case 2:
-                    MenuCombat lancementCombat = new MenuCombat();
-                    lancementCombat.debutCombat();
-                    break;
-                case 3:
-
-                    System.out.println("Votre score est de : " + CreationPersonnage.personnage.getScore());
-                    System.out.println("Monstres battus : " + MenuCombat.monstresBattus);
-                    System.out.println("Vous avez " + personnage.getGils() + " Gils \n");
+                    System.out.println("| Aide:");
+                    System.out.println("| Début de partie: Afin de lancer une partie veuillez créer un personnage, le valider puis 'Commencer l'aventure'");
+                    System.out.println("");
+                    System.out.println("| Attaque: Chaque attaque prend en compte la force du personnage créé et un jet de dés (varie selon l'attaque)");
+                    System.out.println("| qui ajoutera sa valeur à la force initiale, la force finale du joueur et du monstre est ensuite comparée");
+                    System.out.println("| et le perdant du combat perd la différence en PV");
+                    System.out.println("+=============================+");
+                    System.out.println("|Votre score est de : " + CreationPersonnage.personnage.getScore());
+                    System.out.println("|Monstres battus : " + MenuCombat.monstresBattus);
+                    System.out.println("|Vous avez " + personnage.getGils() + " Gils");
+                    System.out.println("+=============================+");
                     System.out.println("Retour au menu");
-                    System.out.println("======================================");
-
                     choixMenu();
 
-                case 4:
+                case 3:
                     System.out.println("Merci d'avoir joué! <3");
+                    System.out.println("Score final: " + personnage.getScore());
                     System.exit(0);
                     break;
 
                 default:
-                    System.out.println("! Choix invalide, veuillez réessayer !");
-                    System.out.println("======================================");
+                    System.out.println("+======================================+");
+                    System.out.println("|! Choix invalide, veuillez réessayer !|");
+                    System.out.println("+======================================+");
 
                     choixMenu();
                     break;

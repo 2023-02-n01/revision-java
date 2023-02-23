@@ -14,6 +14,8 @@ public class MenuObjets {
     public static PotionVie medkit = new PotionVie("Medkits", 15,1, 80);
     public static PotionMana tomeMineur = new PotionMana("Tome Mineur", 20, 2, 30);
     public static PotionMana tomeMajeur = new PotionMana("Tome Majeur", 50,1, 80);
+    public static PotionVie potionvieactive = new PotionVie(null,null,null,null);
+    public static PotionMana potionmanaactive = new PotionMana(null,null,null,null);
 
 
     public static PotionMana getTomeMineur() {
@@ -34,10 +36,10 @@ public class MenuObjets {
 
     //Création des heals + switch pour choisir son heal
     private void menuObjets (Personnage personnage){
-        System.out.println("1: Utiliser une seringue/ + 5 PV" + seringue.getNombre() + " seringues possédée(s)");
-        System.out.println("2: Utiliser un Medkit/ + 15 PV"+ medkit.getNombre() + " medkits possédé(s)");
-        System.out.println("3: Utiliser un Tome Mineur/ + 10 MP"+ tomeMineur.getNombre() + " Tomes Mineurs possédé(s)");
-        System.out.println("4: Utiliser un Tome Majeur/ + 30 MP"+ tomeMajeur.getNombre() + " Tomes Majeurs possédé(s)");
+        System.out.println("1: Utiliser une seringue/ + 5 PV/ " + seringue.getNombre() + " seringues possédée(s)");
+        System.out.println("2: Utiliser un Medkit/ + 15 PV/ "+ medkit.getNombre() + " medkits possédé(s)");
+        System.out.println("3: Utiliser un Tome Mineur/ + 10 MP/ "+ tomeMineur.getNombre() + " Tomes Mineurs possédé(s)");
+        System.out.println("4: Utiliser un Tome Majeur/ + 30 MP/ "+ tomeMajeur.getNombre() + " Tomes Majeurs possédé(s)");
         System.out.println("5: Retour");
 
         MenuCombat menuCombat = new MenuCombat();
@@ -46,16 +48,21 @@ public class MenuObjets {
         switch (input) {
 
             case 1:
+                potionvieactive = seringue;
                 seringue.potionMethod(personnage);
+
                 break;
 
             case 2:
+                potionvieactive = medkit;
                 medkit.potionMethod(personnage);
                 break;
             case 3:
+                potionmanaactive = tomeMineur;
                 tomeMineur.tomeMethod(personnage);
                 break;
             case 4:
+                potionmanaactive = tomeMajeur;
                 tomeMajeur.tomeMethod(personnage);
                 break;
             case 5:

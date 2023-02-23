@@ -1,5 +1,6 @@
 package jdr.entites.personnage;
 
+import jdr.combatHandler.Menus.MenuCombat;
 import jdr.combatHandler.Randomiser;
 import jdr.MenuPrincipal;
 import jdr.combatHandler.SaisieUtilisateur;
@@ -40,14 +41,15 @@ public class CreationPersonnage {
 
 
     private static void refairePerso() {
+        MenuCombat lancementCombat = new MenuCombat();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Voulez vous créer un nouveau personnage?'y' 'n' ");
+        System.out.println("Voulez vous recréer un personnage avec de nouvelles stats?'y' 'n' ");
         String yesNo ;
         yesNo = scanner.nextLine();
         switch (yesNo) {
             case "y" -> nouveauPerso();
-            case "n" -> {System.out.println("Retour au menu");
-            MenuPrincipal.choixMenu();}
+            case "n" -> {System.out.println("Début de l'aventure");
+            lancementCombat.debutCombat();}
             default -> {System.out.println("! Choix invalide, veuillez réessayer !" );
             refairePerso();}
         }

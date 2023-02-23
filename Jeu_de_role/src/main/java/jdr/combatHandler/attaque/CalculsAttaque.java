@@ -21,10 +21,11 @@ public class CalculsAttaque {
     public void getPlayerInfo() {
         personnage = CreationPersonnage.personnage;
         int random = Randomiser.randomizer(1, 10);
-        System.out.println("======================================");
-        System.out.println("(╯°□°)╯Force supplémentaire du héros = " + random);
+        System.out.println("+=============================================+");
+        System.out.println("|(╯°□°)╯Force supplémentaire du héros = " + random);
         attaquePersonnage = personnage.getForce() + random;
-        System.out.println("Attaque du personnage :" + attaquePersonnage);
+        System.out.println("|Attaque du personnage :" + attaquePersonnage);
+
     }
     //"****************************************************************"
 
@@ -36,12 +37,13 @@ public class CalculsAttaque {
         }*/
 
         int random = Randomiser.randomizer(1, 10);
-        System.out.println("======================================");
-        System.out.println("ʕง•ᴥ•ʔงForce supplémentaire du monstre = " + random);
-        System.out.println("");
+        System.out.println("+----------------------------------------------");
+        System.out.println("| ʕง•ᴥ•ʔงForce supplémentaire du monstre = " + random);
         attaqueMonstre = monstre.getForce()+random;
 
-        System.out.println("Force du monstre :" + attaqueMonstre);
+        System.out.println("|Force du monstre :" + attaqueMonstre);
+        System.out.println("+=============================================+");
+        System.out.println(" ");
 
     }
     //*****************************************************************
@@ -52,16 +54,18 @@ public class CalculsAttaque {
             degats = attaquePersonnage - attaqueMonstre;
             monstre.setPointsDV(monstre.getPointsDV() - degats);
             //Print interactions victoire personnage
-            System.out.println("======================================");
+            System.out.println("+=====================================");
             if(degats > 10){
-                System.out.println("*******Coup critique!!!**********");
+                System.out.println("| *******Coup critique!!!**********");
             }
-            System.out.println(personnage.nom + " inflige " +  degats + " dégats");
-            System.out.println("Pv restants du Monstre: " + monstre.getPointsDV());
-            System.out.println("======================================");
-            System.out.println("***"+personnage+"***");
-            System.out.println(personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
-            System.out.println("***"+monstre+"***");
+            System.out.println("|"+personnage.nom + " inflige " +  degats + " dégats");
+            System.out.println("|   (=O*_*)=O     ");
+            System.out.println("|Pv restants du Monstre: " + monstre.getPointsDV());
+            System.out.println("+=================================================================");
+            System.out.println("|  Nom= " + personnage.getNom() + ", Force= " + personnage.getForce()+ ", PV= "+ personnage.getPointsDV() + ", Mana= "+ personnage.getMana()+", Score= "+personnage.getScore());
+            System.out.println("|"+personnage.getNom() +"(=O*_*)=O     VS    Q(*_*Q) " +monstre.getNom());
+            System.out.println("|  Nom= " + monstre.getNom() + ", Force= " + monstre.getForce()+ ", PV= "+ monstre.getPointsDV() + ", Score= "+personnage.getScore());
+            System.out.println("+=================================================================");
 
             //Attaque Monstre
         } else if (attaquePersonnage < attaqueMonstre){
@@ -72,23 +76,25 @@ public class CalculsAttaque {
             //Print interactions victoire monstre
             System.out.println("======================================");
             if(degats > 10){
-                System.out.println("*******Coup critique!!!**********");
+                System.out.println("| *******Coup critique!!!**********");
             }
-            System.out.println(monstre.getNom() + " inflige " +  degats + " dégats");
-            System.out.println("             Q(*_*Q)      ");
-            System.out.println("Pv restants du Personnage: " + personnage.getPointsDV());
-            System.out.println("======================================");
-            System.out.println("***"+personnage+"***");
-            System.out.println(personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
-            System.out.println("***"+monstre+"***");
+            System.out.println("| "+ monstre.getNom() + " inflige " +  degats + " dégats");
+            System.out.println("|             Q(*_*Q)      ");
+            System.out.println("| Pv restants du Personnage: " + personnage.getPointsDV());
+            System.out.println("+=================================================================");
+            System.out.println("|  Nom= " + personnage.getNom() + ", Force= " + personnage.getForce()+ ", PV= "+ personnage.getPointsDV() + ", Mana= "+ personnage.getMana()+", Score= "+personnage.getScore());
+            System.out.println("| "+personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
+            System.out.println("|  Nom= " + monstre.getNom() + ", Force= " + monstre.getForce()+ ", PV= "+ monstre.getPointsDV() + ", Score= "+personnage.getScore());
+            System.out.println("+=================================================================");
         } else {
 
             //Print égalité
-            System.out.println("Vos attaques s'annulent");
-            System.out.println("======================================");
-            System.out.println("***"+personnage+"***");
-            System.out.println(personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
-            System.out.println("***"+monstre+"***");
+            System.out.println("|Vos attaques s'annulent");
+            System.out.println("+=================================================================");
+            System.out.println("|  Nom= " + personnage.getNom() + ", Force= " + personnage.getForce()+ ", PV= "+ personnage.getPointsDV() + ", Mana= "+ personnage.getMana()+", Score= "+personnage.getScore());
+            System.out.println("| "+personnage.getNom() +" (=O*_*)=O    VS    Q(*_*Q) " +monstre.getNom());
+            System.out.println("|  Nom= " + monstre.getNom() + ", Force= " + monstre.getForce()+ ", PV= "+ monstre.getPointsDV() + ", Score= "+personnage.getScore());
+            System.out.println("+=================================================================");
 
         }
 

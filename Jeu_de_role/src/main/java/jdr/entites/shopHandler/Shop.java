@@ -16,11 +16,13 @@ public class Shop {
     public void optionsShop(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Argent de " + CreationPersonnage.personnage.getNom() + " = " + CreationPersonnage.personnage.getGils() + " G" );
-        System.out.println("1: Acheter une seringue/ + 5 PV/ 30 gils");
-        System.out.println("2: Acheter un Medkit/ + 15 PV/ 80 gils");
-        System.out.println("3: Acheter un Tome Mineur/ + 10 MP/ 30 gils");
-        System.out.println("4: Acheter un Tome Majeur/ + 30 MP/ 80 gils");
-        System.out.println("5: Sortir de la boutique");
+        System.out.println("+==============================================+");
+        System.out.println("|  1: Acheter une seringue/ + 5 PV/ 30 gils    |");
+        System.out.println("|  2: Acheter un Medkit/ + 15 PV/ 80 gils      |");
+        System.out.println("|  3: Acheter un Tome Mineur/ + 10 MP/ 30 gils |");
+        System.out.println("|  4: Acheter un Tome Majeur/ + 30 MP/ 80 gils |");
+        System.out.println("|  5: Sortir de la boutique                    |");
+        System.out.println("+==============================================+");
         int input = scanner.nextInt();
         switch (input) {
 
@@ -43,7 +45,9 @@ public class Shop {
             case 5:
                 MenuContinuerFin.continueMenu();
             default:
-                System.out.println("! Choix invalide, veuillez réessayer !");
+                System.out.println("+======================================+");
+                System.out.println("|! Choix invalide, veuillez réessayer !|");
+                System.out.println("+======================================+");
                 optionsShop();
         }
     }
@@ -52,8 +56,10 @@ public class Shop {
         System.out.println(" ");
         System.out.println(" ");
         System.out.println("Merci! Souhaitez vous autre chose? ");
-        System.out.println("1: Rester dans la boutique");
-        System.out.println("2: Quitter la boutique");
+        System.out.println("+====================================+");
+        System.out.println("|  1: Rester dans la boutique        |");
+        System.out.println("|  2: Quitter la boutique            |");
+        System.out.println("+====================================+");
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
         switch (input){
@@ -64,7 +70,9 @@ public class Shop {
                 MenuContinuerFin.continueMenu();
                 break;
             default:
-                System.out.println("! Choix invalide, veuillez réessayer !");
+                System.out.println("+======================================+");
+                System.out.println("|! Choix invalide, veuillez réessayer !|");
+                System.out.println("+======================================+");
                 shopMore();
         }
 

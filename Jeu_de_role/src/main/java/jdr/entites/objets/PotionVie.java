@@ -4,6 +4,9 @@ import jdr.entites.personnage.CreationPersonnage;
 import jdr.entites.personnage.Personnage;
 import jdr.entites.shopHandler.Shop;
 
+import static jdr.entites.objets.MenuObjets.medkit;
+import static jdr.entites.objets.MenuObjets.seringue;
+
 public class PotionVie {
 
     private String nom;
@@ -24,32 +27,37 @@ public class PotionVie {
     //Méthode de Heal (utilisée avec seringues ou Medkits)
     public void potionMethod(Personnage personnage) {
         MenuCombat lancementCombat = new MenuCombat();
-        if (nombre > 0) {
-            personnage.setPointsDV(personnage.getPointsDV() + pointsDV);
-            nombre--;
+
+        if (seringue == MenuObjets.potionvieactive && seringue.nombre > 0) {
+            personnage.setPointsDV(personnage.getPointsDV() + seringue.pointsDV);
+
+            seringue.setNombre(seringue.getNombre() - 1);
             System.out.println("Vous avez récupéré: "+ pointsDV +  "PV!");
-            System.out.println(nom + " restantes: " + nombre);
-            if (MenuObjets.seringue != null){
-            MenuObjets.seringue.setNombre(nombre);
-            } else if (MenuObjets.medkit != null) {
-                MenuObjets.medkit.setNombre(nombre);
+            System.out.println(nom + " restantes: " + seringue.nombre);
+            lancementCombat.debutCombat();
+            } else if (medkit == MenuObjets.potionvieactive && medkit.nombre > 0){
+                personnage.setPointsDV(personnage.getPointsDV() + pointsDV);
+                medkit.setNombre(medkit.getNombre() - 1);
+                System.out.println("Vous avez récupéré: "+ pointsDV +  "PV!");
+                System.out.println(nom + " restants: " + medkit.nombre);
+                lancementCombat.debutCombat();
+
+            }else {
+                System.out.println("Vous n'avez plus de " + nom +"!");
+                System.out.println(nom + " restantes " + nombre);
+                lancementCombat.debutCombat();
 
             }
-            lancementCombat.debutCombat();
-        }else{
-            System.out.println("Vous n'avez plus de" + nom +"!");
-            System.out.println(nom + " restantes " + nombre);
-            lancementCombat.debutCombat();
         }
-    }
+
 
     public void acheterPV(PotionVie potionVie){
         Shop shop = new Shop();
 
-        if(potionVie == MenuObjets.seringue && CreationPersonnage.personnage.getGils() >= MenuObjets.seringue.getGils()){
-            MenuObjets.seringue.setNombre(MenuObjets.seringue.getNombre() + 1);
-            CreationPersonnage.personnage.setGils(CreationPersonnage.personnage.getGils() - MenuObjets.seringue.getGils());
-            System.out.println(MenuObjets.seringue.getGils() +" G payés " + CreationPersonnage.personnage.getGils() + " G Restants" );
+        if(potionVie == seringue && CreationPersonnage.personnage.getGils() >= seringue.getGils()){
+            seringue.setNombre(seringue.getNombre() + 1);
+            CreationPersonnage.personnage.setGils(CreationPersonnage.personnage.getGils() - seringue.getGils());
+            System.out.println(seringue.getGils() +" G payés " + CreationPersonnage.personnage.getGils() + " G Restants" );
 
         } else if (potionVie == MenuObjets.medkit && MenuObjets.medkit !=null && CreationPersonnage.personnage.getGils() >= MenuObjets.medkit.getGils()) {
             MenuObjets.medkit.setNombre(MenuObjets.medkit.getNombre() + 1);
