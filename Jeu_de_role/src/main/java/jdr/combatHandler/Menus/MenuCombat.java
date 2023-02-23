@@ -1,6 +1,7 @@
-package jdr.combatHandler;
+package jdr.combatHandler.Menus;
 
 import jdr.MenuPrincipal;
+import jdr.combatHandler.Randomiser;
 import jdr.combatHandler.attaque.AttaqueLauncher;
 import jdr.combatHandler.attaquesSpéciales.AttaqueSpecialeLauncher;
 import jdr.entites.objets.MenuObjets;
@@ -73,7 +74,7 @@ public class MenuCombat extends AttaqueLauncher {
                     personnage.setGils(personnage.getGils() + monstre.getGils());
                     System.out.println("*****Vous avez gagné le combat!!****");
                     System.out.println("Score du joueur: " + personnage.getScore());
-                    System.out.println("***************V(-.o)V**************");
+                    System.out.println("***************V(-.o)V************** \n");
                     monstresBattus = monstresBattus + 1;
                     monstre = null;
                     MenuContinuerFin.rencontreShop();
@@ -82,7 +83,7 @@ public class MenuCombat extends AttaqueLauncher {
                     System.out.println("*****Vous avez perdu et êtes mort dans d'atroces souffrances...*****");
                     System.out.println("Votre score final est de : " + personnage.getScore());
                     System.out.println("*********************༼ つ ಥ_ಥ ༽つ******************");
-                    System.out.println("Monstres battus : " + monstresBattus);
+                    System.out.println("Monstres battus : " + monstresBattus + "\n");
                     personnage = null;
                     MenuPrincipal.choixMenu();
                 }

@@ -1,6 +1,6 @@
 package jdr;
 
-import jdr.combatHandler.MenuCombat;
+import jdr.combatHandler.Menus.MenuCombat;
 import jdr.entites.personnage.CreationPersonnage;
 
 import java.util.Scanner;

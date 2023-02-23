@@ -1,7 +1,7 @@
 package jdr.combatHandler.attaquesSpéciales;
 
 import jdr.combatHandler.attaque.CalculsAttaque;
-import jdr.combatHandler.MenuCombat;
+import jdr.combatHandler.Menus.MenuCombat;
 import jdr.combatHandler.Randomiser;
 import jdr.entites.personnage.Personnage;
 import jdr.entites.creatures.Monstre;

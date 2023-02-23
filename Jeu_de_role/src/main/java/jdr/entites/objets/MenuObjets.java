@@ -2,8 +2,7 @@ package jdr.entites.objets;
 
 import java.util.Scanner;
 
-import jdr.combatHandler.MenuCombat;
-import jdr.entites.personnage.CreationPersonnage;
+import jdr.combatHandler.Menus.MenuCombat;
 import jdr.entites.personnage.Personnage;
 
 public class MenuObjets {

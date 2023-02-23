@@ -1,8 +1,9 @@
-package jdr.combatHandler;
-
-import jdr.MenuPrincipal;
+package jdr.combatHandler.Menus;
 
 import java.util.Scanner;
+
+import jdr.combatHandler.Menus.MenuCombat;
+import jdr.combatHandler.Randomiser;
 import jdr.entites.shopHandler.Shop;
 
 import static jdr.entites.personnage.CreationPersonnage.personnage;

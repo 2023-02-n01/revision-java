@@ -1,6 +1,5 @@
 package jdr.entites.objets;
-import jdr.combatHandler.MenuCombat;
-import jdr.entites.global.PotionParent;
+import jdr.combatHandler.Menus.MenuCombat;
 import jdr.entites.personnage.CreationPersonnage;
 import jdr.entites.personnage.Personnage;
 import jdr.entites.shopHandler.Shop;
