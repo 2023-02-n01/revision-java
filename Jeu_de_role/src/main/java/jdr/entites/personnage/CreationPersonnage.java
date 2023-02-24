@@ -32,6 +32,7 @@ public class CreationPersonnage {
         personnage.setPointsDV(Randomiser.randomizer(20, 50));
         personnage.setMana(100);
         personnage.setGils(50);
+        MenuCombat.monstresBattus = 0;
 
         System.out.println(personnage);
         refairePerso();
