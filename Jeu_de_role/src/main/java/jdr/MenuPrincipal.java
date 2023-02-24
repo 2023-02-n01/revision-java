@@ -33,7 +33,7 @@ public class MenuPrincipal {
             switch (choix) {
 
                 case 1:
-                    if(personnage.getNom() == null ) {
+                    if(personnage.getNom() == null || personnage.getPointsDV() <= 0 ) {
                         CreationPersonnage.nouveauPerso();
                     }else{
                         MenuCombat lancementCombat = new MenuCombat();
